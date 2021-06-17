@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <a class="navbar-brand" href="#">eShop</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categoris</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 ms-auto">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-info my-2 my-sm-0 ms-auto" type="submit">Search</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container mt-3">
+  <div class="row">
+    <div *ngFor="let property of users" class="shad col-sm-3 col-md-3 p-3">
+      <div class="card">
+        <div class="card-img-wraper">
+          <img *ngIf="property.picture" class="card-img-top" src="assets/images/{{property.picture}}.png" alt="">
+          <img *ngIf="!property.picture" class="card-img-top" src="assets/images/image-1.png" alt="">
+          <ul class="list-inline text-center member-icons animate">
+            <li class="list-inline-item">
+              <button class="btn btn-primary" routerLink="/detail-property/{{property.balance}}"><i
+                  class="fa fa-edit"></i></button>
+            </li>
+            <li class="list-inline-item">
+              <button class="btn btn-primary">
+                <i class="fa fa-address-book"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body p-2">
+          <!-- <h1>{{property.id}}</h1> -->
+          <h2>{{property.name}}</h2>
+          <h2>{{property.balance}}</h2>
+          <h2>{{property.company}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

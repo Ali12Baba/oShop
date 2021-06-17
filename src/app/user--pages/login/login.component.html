@@ -1,0 +1,38 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="underlineHover" [ngClass]="{'active': signInFormShow}" (click)="signInForm()"> Sign In </h2>
+    <h2 class="underlineHover" [ngClass]="{'active': signUpFormShow}" (click)="signUpForm()">Sign Up </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="..//..//..//assets/images/login-image.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="formSignIn" (ngSubmit)="onSignInSubmit()" novalidate>
+      <div *ngIf="signInFormShow">
+        <input type="email" id="login" class="fadeIn second fieldStile" formControlName="email" placeholder="Email">
+        <input type="password" id="password" class="fadeIn third fieldStile" formControlName="password"
+          placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </div>
+    </form>
+    <form [formGroup]="formSignUp" (ngSubmit)="onSignUpSubmit()" novalidate>
+      <div *ngIf="signUpFormShow">
+        <input type="text" id="login" class="fadeIn second fieldStile" formControlName="username"
+          placeholder="Username">
+        <input type="email" id="login" class="fadeIn second fieldStile" formControlName="email" placeholder="Email">
+        <input type="password" id="password" class="fadeIn third fieldStile" formControlName="password"
+          placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="Sign Up">
+      </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div *ngIf="signInFormShow" id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
